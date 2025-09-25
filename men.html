@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .product-card.selected {
+        border: 3px solid var(--primary);
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+        transform: scale(1.02);
+      }
+      .try-on-section {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--card-bg);
+        border-top: 2px solid var(--primary);
+        padding: 15px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+      }
+      .try-on-section.show {
+        display: block;
+      }
+      .selected-item-preview {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+      .selected-item-preview img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid var(--primary);
+      }
+      .selected-item-info h4 {
+        margin: 0 0 5px 0;
+        color: var(--primary);
+      }
+      .selected-item-info p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text);
+      }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <h2 class="section-title">Men's Fashion</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/_DSC3463.jpg" alt="Men's Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Formal Suit</h3>
+                        <p>Elegant and professional</p>
+                        <div class="product-price">
+                            <span class="price">8,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Formal Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/_DSC3410.jpg" alt="Men's Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Casual Shirt</h3>
+                        <p>Comfortable for daily wear</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Casual Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/_DSC3438.jpg" alt="Men's Jacket">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stylish Jacket</h3>
+                        <p>Perfect for any occasion</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Stylish Jacket to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/_DSC3412.jpg" alt="Men's Pants">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Classic Pants</h3>
+                        <p>Versatile and durable</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Classic Pants to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/2025 Spring Men's Jeans High Quality Classic Style….jpg" alt="Men's Jeans">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Spring Jeans</h3>
+                        <p>High quality and classic</p>
+                        <div class="product-price">
+                            <span class="price">4,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Spring Jeans to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Boyfriend Style Men's Striped Patchwork Zipper….jpg" alt="Men's Hoodie">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Striped Hoodie</h3>
+                        <p>Casual and trendy</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Striped Hoodie to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/CARACTÉRISTIQUES________ Type de tissu _ Fibre….jpg" alt="Fabric Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fabric Wear</h3>
+                        <p>High quality fabric</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Fabric Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Chemise à manches courtes simple et mode pour….jpg" alt="Short Sleeve Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Short Sleeve Shirt</h3>
+                        <p>Simple and stylish</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Short Sleeve Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Christopher Noir™ - The Original_ Where Culture….jpg" alt="Christopher Noir">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Christopher Noir</h3>
+                        <p>Cultural fashion</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Christopher Noir to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Description_   Formal Men's Suits 2 Piece Slim Fit….jpg" alt="Slim Fit Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Slim Fit Suit</h3>
+                        <p>Formal wear</p>
+                        <div class="product-price">
+                            <span class="price">8,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Slim Fit Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Elegant Handmade Navy Blue Three Piece Coat Pant….jpg" alt="Three Piece Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Three Piece Suit</h3>
+                        <p>Navy blue handmade</p>
+                        <div class="product-price">
+                            <span class="price">12,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Three Piece Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Elegantes Herren Anzug Set Königsblau….jpg" alt="Blue Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Blue Suit Set</h3>
+                        <p>Elegant design</p>
+                        <div class="product-price">
+                            <span class="price">10,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Blue Suit Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Elevate Your Casual Look with Our Stylish Long….jpg" alt="Long Sleeve">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Long Sleeve Shirt</h3>
+                        <p>Casual look</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Long Sleeve Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/f023df73-c5fc-4306-a836-c9a5b74675c3.jpg" alt="Men's Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Item</h3>
+                        <p>Stylish piece</p>
+                        <div class="product-price">
+                            <span class="price">4,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Item to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Gothic Formal Outfit.jpeg" alt="Gothic Outfit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gothic Formal Outfit</h3>
+                        <p>Unique style</p>
+                        <div class="product-price">
+                            <span class="price">7,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Gothic Formal Outfit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Here's a men's outfit perfect for all your outings….jpg" alt="Outfit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Perfect Outfit</h3>
+                        <p>For all outings</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Perfect Outfit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Herren Hochzeit Anzüge Suits Marineblau Armeegrün….jpg" alt="Wedding Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Wedding Suit</h3>
+                        <p>Marine blue</p>
+                        <div class="product-price">
+                            <span class="price">11,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Wedding Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Horse Power.jpg" alt="Horse Power">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Horse Power</h3>
+                        <p>Unique theme</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Horse Power to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Iconic and instantly recognizable, Polo Ralph….jpg" alt="Polo Ralph">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Polo Ralph</h3>
+                        <p>Iconic brand</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Polo Ralph to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Made from a premium blend of wool this Safari suit….jpg" alt="Safari Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Safari Suit</h3>
+                        <p>Premium wool</p>
+                        <div class="product-price">
+                            <span class="price">9,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Safari Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Men's Fashion Casual Comfortable Loose Ribbed Fabric Short-sleeved Polo Shirt Red-M.jpeg" alt="Polyester Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Polyester Shirt</h3>
+                        <p>Comfortable material</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Polyester Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/PRICES MAY VARY_ 【2 PIECE MENS SUIT FABRIC】This….jpg" alt="2 Piece Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">2 Piece Suit</h3>
+                        <p>Fabric suit</p>
+                        <div class="product-price">
+                            <span class="price">7,500/=</span>
+                            <button class="add-to-cart" aria-label="Add 2 Piece Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/PRICES MAY VARY_ 【Materials】_The jogging suits….jpg" alt="Jogging Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Jogging Suit</h3>
+                        <p>Sporty wear</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Jogging Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/PRICES MAY VARY_ Comfortable Fabrics_Men Athletic….jpg" alt="Athletic Wear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Athletic Wear</h3>
+                        <p>Comfortable fabrics</p>
+                        <div class="product-price">
+                            <span class="price">3,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Athletic Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/PRICES MAY VARY_ Service --- If you have any….jpg" alt="Service Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Service Wear</h3>
+                        <p>Professional service</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Service Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Product information_ Color_ gray, black, blue….jpg" alt="Gray Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gray Shirt</h3>
+                        <p>Multiple colors</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Gray Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Product information_ Pattern_ Plaid Color_ green….jpg" alt="Plaid Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Plaid Shirt</h3>
+                        <p>Green plaid</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Plaid Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Revamp your sportswear collection with this….jpg" alt="Sportswear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sportswear</h3>
+                        <p>Revamped collection</p>
+                        <div class="product-price">
+                            <span class="price">4,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Sportswear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Slim-fit trousers in melange virgin wool_ Elegant….jpg" alt="Slim Fit Trousers">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Slim Fit Trousers</h3>
+                        <p>Virgin wool</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Slim Fit Trousers to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Slim-fit trousers in seersucker_ With front pleats….jpg" alt="Seersucker Trousers">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Seersucker Trousers</h3>
+                        <p>Front pleats</p>
+                        <div class="product-price">
+                            <span class="price">4,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Seersucker Trousers to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/SPECIFICATIONS Plus Size 40 42 44 Autumn Loose….jpg" alt="Plus Size">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Plus Size Wear</h3>
+                        <p>Autumn loose</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Plus Size Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/This short-sleeve tops is made with comfortable….jpg" alt="Short Sleeve Top">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Short Sleeve Top</h3>
+                        <p>Comfortable material</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Short Sleeve Top to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/Wale African men clothing_embroidered suit_wedding suit_senator suit_groomsmen suit_handmade clothing_2 piece set_Nigerian men outfit_Kaftan.jpeg" alt="African Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">African Suit</h3>
+                        <p>Embroidered wedding suit</p>
+                        <div class="product-price">
+                            <span class="price">15,000/=</span>
+                            <button class="add-to-cart" aria-label="Add African Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/mens.jpeg" alt="Men Kaunda Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Trench Coat</h3>
+                        <p>Stylish and warm</p>
+                        <div class="product-price">
+                            <span class="price">15,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Trench Coat to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/men%20fashion/بدلة رجالية عادية من قميص كم طويل بسحاب أمامي….jpg" alt="Arabic Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Arabic Suit</h3>
+                        <p>Long sleeve shirt suit</p>
+                        <div class="product-price">
+                            <span class="price">8,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Arabic Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Try-On Selection Section -->
+    <div class="try-on-section" id="tryOnSection">
+      <div class="container">
+        <div class="selected-item-preview" id="selectedItemPreview">
+          <!-- Selected item will be displayed here -->
+        </div>
+        <div style="text-align: center;">
+          <button class="btn" id="chooseForTryOn" style="background: var(--primary); padding: 12px 24px; font-size: 16px;">
+            <i class="fa-solid fa-magic" style="margin-right: 8px;"></i>
+            Choose for Virtual Try-On
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+      // Try-On Selection Functionality
+      let selectedProduct = null;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const productCards = document.querySelectorAll('.product-card');
+        const tryOnSection = document.getElementById('tryOnSection');
+        const selectedItemPreview = document.getElementById('selectedItemPreview');
+        const chooseForTryOnBtn = document.getElementById('chooseForTryOn');
+
+        // Add click event to each product card
+        productCards.forEach(card => {
+          card.addEventListener('click', function() {
+            // Remove selected class from all cards
+            productCards.forEach(c => c.classList.remove('selected'));
+
+            // Add selected class to clicked card
+            this.classList.add('selected');
+
+            // Store selected product data
+            const img = this.querySelector('img');
+            const title = this.querySelector('.product-title').textContent;
+            const price = this.querySelector('.price').textContent;
+
+            selectedProduct = {
+              image: img.src,
+              title: title,
+              price: price,
+              category: 'men'
+            };
+
+            // Update preview
+            selectedItemPreview.innerHTML = `
+              <img src="${selectedProduct.image}" alt="${selectedProduct.title}">
+              <div class="selected-item-info">
+                <h4>${selectedProduct.title}</h4>
+                <p>${selectedProduct.price}</p>
+              </div>
+            `;
+
+            // Show try-on section
+            tryOnSection.classList.add('show');
+          });
+        });
+
+        // Handle choose for try-on button
+        chooseForTryOnBtn.addEventListener('click', function() {
+          if (selectedProduct) {
+            // Store selected product in localStorage
+            localStorage.setItem('selectedForTryOn', JSON.stringify(selectedProduct));
+
+            // Show success message and provide navigation option
+            alert(`✅ ${selectedProduct.title} selected for virtual try-on!\n\nGo back to the Virtual Try-On Mirror page and upload your photo to see how this outfit looks on you!`);
+
+            // Optionally redirect to virtual try-on page
+            // window.location.href = 'virtual-try-on.html?from=men';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

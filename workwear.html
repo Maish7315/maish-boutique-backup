@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Wear</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+            <h2 class="section-title">Work Wear</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/Corporate Uniform.jpeg" alt="Forman Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Forman Shirt</h3>
+                        <p>Professional attire</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Forman Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/Work helment.jpeg" alt="Dust Proof Shirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">DustProof Shirt</h3>
+                        <p>Handmade quality Dustproof shirt</p>
+                        <div class="product-price">
+                            <span class="price">999/=</span>
+                            <button class="add-to-cart" aria-label="Add DustProof Shirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                     <div class="product-img">
+                         <img loading="lazy" src="images/work%20wear/Wearpack Baju Safety Mokoworkwear.jpeg" alt="Reflector Shirt">
+                     </div>
+                     <div class="product-content">
+                         <h3 class="product-title">Reflector Shirt</h3>
+                         <p>Handmade quality Reflector shirt</p>
+                         <div class="product-price">
+                             <span class="price">1,999/=</span>
+                             <button class="add-to-cart" aria-label="Add Reflector Shirt to cart">
+                                 <i class="fa-solid fa-shopping-cart"></i>
+                             </button>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/safety-vest.jpeg" alt="Work Blazer">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Black Reflector</h3>
+                        <p>Handmade quality Reflectors all colours and types</p>
+                        <div class="product-price">
+                            <span class="price">299/=</span>
+                            <button class="add-to-cart" aria-label="Add Black Reflector to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/MTM Innovation Inc.jpeg" alt="embroidery Services">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Embroidery Services</h3>
+                        <p>Handmade quality services</p>
+                        <div class="product-price">
+                            <span class="price">from 2,999/=</span>
+                            <button class="add-to-cart" aria-label="Add Embroidery Services to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/boots.jpeg" alt="Work Blazer">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Safety Shoes</h3>
+                        <p>All weather protection shoes</p>
+                        <div class="product-price">
+                            <span class="price">4,999/=</span>
+                            <button class="add-to-cart" aria-label="Add Safety Shoes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/overalls-bibs.jpeg" alt="Work Blazer">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Work Attires</h3>
+                        <p>All colours, All weather and All fashionable</p>
+                        <div class="product-price">
+                            <span class="price">5,999/=</span>
+                            <button class="add-to-cart" aria-label="Add Work Attires to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/INBIKE Breathable Motorcycle Touchscreen Knuckle.jpeg" alt="Gloves">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gloves</h3>
+                        <p>Needleproof Gloves</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Gloves to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/gloves.jpeg" alt="Fibred Safety Clothes">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gloves</h3>
+                        <p>Reflecting and Waterproof Work Attires</p>
+                        <div class="product-price">
+                            <span class="price">5,999/=</span>
+                            <button class="add-to-cart" aria-label="Add Fibred Safety Clothes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/483404ca-8092-4d82-bff1-c1b727e480f8.jpeg" alt="Site overalls">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Site Overalls</h3>
+                        <p>Site Overalls Dust Proof</p>
+                        <div class="product-price">
+                            <span class="price">6,549/=</span>
+                            <button class="add-to-cart" aria-label="Add Site Overalls to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/Conjunto Uniforme EPI Nr10 Segurança do Trabalho Mecanico Faixa Eletricista Refletiva Construção Obra Serviço.jpeg" alt="Safety Shirts">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Safety Shirts</h3>
+                        <p>Shirt with stripe reflector</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Safety Shirts to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/AWAKEN Free Ride Inline Skate Black.jpeg" alt="Skate Shoes">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Skate Shoes</h3>
+                        <p>Imported Quality and Best skate shoes</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Skate Shoes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/hard-hat.jpeg" alt="Helmet">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Helmet</h3>
+                        <p>Quality Helmet for Safety</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Helmet to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/wins-bigger.jpeg" alt="Scrubs">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Scrubs</h3>
+                        <p>Practical and durable Hospital scrubs</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Scrubs to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/trail.jpeg" alt="Overalls and Bibs">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Reflector Overalls</h3>
+                        <p>Handmade quality</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Reflector Overalls to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/work%20wear/safety-boots.jpeg" alt="Safety boots">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Safety boots</h3>
+                        <p>All weather Safety boots</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Safety boots to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

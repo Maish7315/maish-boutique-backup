@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Clothing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .product-card.selected {
+        border: 3px solid var(--primary);
+        box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+        transform: scale(1.02);
+      }
+      .try-on-section {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--card-bg);
+        border-top: 2px solid var(--primary);
+        padding: 15px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+      }
+      .try-on-section.show {
+        display: block;
+      }
+      .selected-item-preview {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+      .selected-item-preview img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid var(--primary);
+      }
+      .selected-item-info h4 {
+        margin: 0 0 5px 0;
+        color: var(--primary);
+      }
+      .selected-item-info p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text);
+      }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <h2 class="section-title">Women's Clothing</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/2d9c9bf3-0d56-4154-a2e2-3aaf90f713a2.jpg" alt="Women's Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Elegant Dress</h3>
+                        <p>Stylish and comfortable</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Elegant Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/4ce27d1e-64c2-4fd1-aa7b-a70b530a376c.jpeg" alt="Women's Outfit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Casual Outfit</h3>
+                        <p>Perfect for everyday wear</p>
+                        <div class="product-price">
+                            <span class="price">4,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Casual Outfit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/7e392e25-318d-409a-8860-fbd3bea4abe7.jpg" alt="Women's Top">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Top</h3>
+                        <p>Trendy and versatile</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Top to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/7ef2c4ed-20e1-4734-8c25-6edfd25b0ac2.jpg" alt="Women's Skirt">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Chic Skirt</h3>
+                        <p>Elegant and modern</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Chic Skirt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/ankara.jpg" alt="Ankara Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Ankara Dress</h3>
+                        <p>Unique and colorful</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Ankara Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/591b6ea8-c628-4bf8-9d0f-1729ccdfe0c2.jpg" alt="Women's Blouse">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stylish Blouse</h3>
+                        <p>Comfortable and classy</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Stylish Blouse to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/candy-scarf.jpeg" alt="Scarf">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Candy Colored Scarf</h3>
+                        <p>Soft and stylish</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Candy Colored Scarf to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/a354e20f-a1de-4ac2-bb97-3f74e037ab88.jpg" alt="Women's Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Item</h3>
+                        <p>Trendy design</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Item to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/ac22ad42-c4e7-4b41-8f98-85c2fd627590.jpg" alt="Women's Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stylish Piece</h3>
+                        <p>Elegant look</p>
+                        <div class="product-price">
+                            <span class="price">4,100/=</span>
+                            <button class="add-to-cart" aria-label="Add Stylish Piece to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/ad10086b-adc9-4d00-bb07-c6ea64f85a22.jpg" alt="Women's Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Modern Outfit</h3>
+                        <p>Comfortable fit</p>
+                        <div class="product-price">
+                            <span class="price">3,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Modern Outfit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/b464d9cb-df6c-4648-9caa-be2cac581083.jpeg" alt="Women's Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Casual Wear</h3>
+                        <p>Everyday style</p>
+                        <div class="product-price">
+                            <span class="price">2,900/=</span>
+                            <button class="add-to-cart" aria-label="Add Casual Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/yoga.jpg" alt="Yoga Shorts">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Yoga Shorts Set</h3>
+                        <p>Sexy and comfortable</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Yoga Shorts Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/cardigan-sweater.jpeg" alt="Cardigan">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Cable Knitted Cardigan</h3>
+                        <p>Warm and cozy</p>
+                        <div class="product-price">
+                            <span class="price">4,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Cable Knitted Cardigan to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/fabric.jpg" alt="Fabric Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fabric Wear</h3>
+                        <p>High quality fabric</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Fabric Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/courtdress.jpeg" alt="Court Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Court Dress</h3>
+                        <p>Professional style</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Court Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/polyster.jpg" alt="Suit Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Women's Suit Set</h3>
+                        <p>Office and casual</p>
+                        <div class="product-price">
+                            <span class="price">6,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Women's Suit Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/scarf.jpeg" alt="Floral Outfit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floral Outfit</h3>
+                        <p>Comfortable fabric</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Floral Outfit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/floral.jpg" alt="Floral Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floral Dress</h3>
+                        <p>Stunning design</p>
+                        <div class="product-price">
+                            <span class="price">4,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Floral Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/floral%20suit.jpeg" alt="Floral Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floral Suit</h3>
+                        <p>Elegant office wear</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Checkered Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/comfort.jpg" alt="Scarf">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Luxury Cashmere Scarf</h3>
+                        <p>Dark green luxury</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Luxury Cashmere Scarf to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/polystter.jpg" alt="Comfort Wear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Comfort Wear</h3>
+                        <p>Balance of comfort and control</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Comfort Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WIDE LEG HIGHWAIST JEANS.jpeg" alt="Polyester Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Polyester Wear</h3>
+                        <p>90% Polyester</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Polyester Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/design.jpg" alt="Long Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Chic Long Dress</h3>
+                        <p>Chic design</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Chic Long Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/Register - Login.jpeg" alt="Church Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Church scurf</h3>
+                        <p>Modest and elegant</p>
+                        <div class="product-price">
+                            <span class="price">5,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Church scurf to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/strech.jpg" alt="Stretch Wear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stretch Wear</h3>
+                        <p>Breathable material</p>
+                        <div class="product-price">
+                            <span class="price">3,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Stretch Wear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/women.jpeg" alt="Login Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">women casual wear</h3>
+                        <p>Account access</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Register/Login to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/comfy.jpeg" alt="Two Piece Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Comfy wear</h3>
+                        <p>Black long sleeve</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Two Piece Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/ry.jpg" alt="Item">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Item</h3>
+                        <p>Stylish piece</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Item to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/stylish-dress.jpeg" alt="Stylish Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stylish Dress</h3>
+                        <p>For vacation and weddings</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Stylish Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/stylish-dress.jpg" alt="Stylish Dress">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stylish Dress</h3>
+                        <p>Casual and resort wear</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Stylish Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/trouser-suit.jpeg" alt="Trouser Suit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Trouser Suit</h3>
+                        <p>Professional look</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Trouser Suit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WhatsApp Image 2025-09-05 at 08.54.13.jpeg" alt="WhatsApp Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Image 1</h3>
+                        <p>Latest style</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Image 1 to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WhatsApp Image 2025-09-05 at 08.54.14.jpeg" alt="WhatsApp Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Image 2</h3>
+                        <p>Trendy design</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Image 2 to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WhatsApp Image 2025-09-05 at 08.54.15.jpeg" alt="WhatsApp Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Image 3</h3>
+                        <p>Modern look</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Image 3 to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WhatsApp Image 2025-09-05 at 08.54.16.jpeg" alt="WhatsApp Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Image 4</h3>
+                        <p>Elegant style</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Image 4 to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/women%20clothing/WhatsApp Image 2025-09-05 at 08.54.17.jpeg" alt="WhatsApp Image">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Image 5</h3>
+                        <p>Chic outfit</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Image 5 to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Try-On Selection Section -->
+    <div class="try-on-section" id="tryOnSection">
+      <div class="container">
+        <div class="selected-item-preview" id="selectedItemPreview">
+          <!-- Selected item will be displayed here -->
+        </div>
+        <div style="text-align: center;">
+          <button class="btn" id="chooseForTryOn" style="background: var(--primary); padding: 12px 24px; font-size: 16px;">
+            <i class="fa-solid fa-magic" style="margin-right: 8px;"></i>
+            Choose for Virtual Try-On
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+      // Try-On Selection Functionality
+      let selectedProduct = null;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const productCards = document.querySelectorAll('.product-card');
+        const tryOnSection = document.getElementById('tryOnSection');
+        const selectedItemPreview = document.getElementById('selectedItemPreview');
+        const chooseForTryOnBtn = document.getElementById('chooseForTryOn');
+
+        // Add click event to each product card
+        productCards.forEach(card => {
+          card.addEventListener('click', function() {
+            // Remove selected class from all cards
+            productCards.forEach(c => c.classList.remove('selected'));
+
+            // Add selected class to clicked card
+            this.classList.add('selected');
+
+            // Store selected product data
+            const img = this.querySelector('img');
+            const title = this.querySelector('.product-title').textContent;
+            const price = this.querySelector('.price').textContent;
+
+            selectedProduct = {
+              image: img.src,
+              title: title,
+              price: price,
+              category: 'women'
+            };
+
+            // Update preview
+            selectedItemPreview.innerHTML = `
+              <img src="${selectedProduct.image}" alt="${selectedProduct.title}">
+              <div class="selected-item-info">
+                <h4>${selectedProduct.title}</h4>
+                <p>${selectedProduct.price}</p>
+              </div>
+            `;
+
+            // Show try-on section
+            tryOnSection.classList.add('show');
+          });
+        });
+
+        // Handle choose for try-on button
+        chooseForTryOnBtn.addEventListener('click', function() {
+          if (selectedProduct) {
+            // Store selected product in localStorage
+            localStorage.setItem('selectedForTryOn', JSON.stringify(selectedProduct));
+
+            // Show success message and provide navigation option
+            alert(`✅ ${selectedProduct.title} selected for virtual try-on!\n\nGo back to the Virtual Try-On Mirror page and upload your photo to see how this outfit looks on you!`);
+
+            // Optionally redirect to virtual try-on page
+            // window.location.href = 'virtual-try-on.html?from=women';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

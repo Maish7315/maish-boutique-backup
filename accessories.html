@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="mattress.html">Mattress Center</a></li>
+                        <li><a href="index.html#uniform-center">Maish Uniform Center</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <h2 class="section-title">Accessories</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/111903d5-8df4-4864-89fb-68656ab22439.jpg" alt="Accessory 1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Flags</h3>
+                        <p>Color: Gold</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Necklace to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/jewellery piece(Cuban bracelet).jpeg" alt="Accessory 2">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Bracelet</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Bracelet to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/1e79b372-dd6a-4ec3-a436-3e193184dea5.jpg" alt="Accessory 3">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Nike socks</h3>
+                        <p>Color: Rose Gold</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Nike socks to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/baseball-cap.jpg" alt="Accessory 4">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Cap</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">800/=</span>
+                            <button class="add-to-cart" aria-label="Add Cap to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/97b853ac-9963-4a98-a52d-c7c7b90bd76c.jpg" alt="Accessory 5">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Watch 1</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/8c0356c4-21db-4d37-b28c-e8c3bd598627.jpg" alt="Accessory 6">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Long Socks</h3>
+                        <p>Color: Brown</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Handbag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/military-scarf.jpeg" alt="Accessory 7">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Scarf</h3>
+                        <p>Color: Red</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Scarf to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/ac795ddc-9625-4fb0-9efc-4d9a8e154f27.jpg" alt="Accessory 8">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Hat</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Hat to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/accessory.jpg" alt="Accessory 9">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">NY cap</h3>
+                        <p>Color: Silver/Gold</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Iced Out Cuban Link Necklace to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/babc10a3-e35d-4b78-9702-a23cbd3c07cb.jpg" alt="Accessory 10">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Stocking</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Belt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/bd6b9a9a-e263-4a03-ba55-696cd8fea225.jpg" alt="Accessory 11">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Trophies</h3>
+                        <p>Color: Blue/White</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Trophies to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/chain.jpg" alt="Accessory 12">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Must Need Jewellery</h3>
+                        <p>Featuring @bettyandbiddy</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Must Need Jewellery to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/cuban-necklace.jpeg" alt="Accessory 13">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Steel Chain 1</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Steel Chain to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/falari-design.jpg" alt="Accessory 14">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Belt</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">500/=</span>
+                            <button class="add-to-cart" aria-label="Add Socks to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/d4f6b299-52a1-4bf2-9936-cd85136f7e95.jpg" alt="Accessory 15">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sunny Men Hat</h3>
+                        <p>Color: Gold</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/brand.jpg" alt="Accessory 16">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Men Hat</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/jewellery-set.jpeg" alt="Accessory 17">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Ear rings</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Necklace to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/leather-accessory.jpg" alt="Accessory 18">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Leather Belt</h3>
+                        <p>Color: Brown</p>
+                        <div class="product-price">
+                            <span class="price">2,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Leather Belt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/Flag of East African Community 9.jpg" alt="Accessory 19">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">EAC Flag</h3>
+                        <p>Color: Multi-color</p>
+                        <div class="product-price">
+                            <span class="price">500/=</span>
+                            <button class="add-to-cart" aria-label="Add EAC Flag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/mens-belt.jpg" alt="Accessory 20">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Official Belt</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/mens-comfort.jpg" alt="Accessory 21">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Casual Belt</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/mens-glasses.jpg" alt="Accessory 22">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sun glasses</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">2,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Steel Chain to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/signet-ring.jpg" alt="Accessory 23">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Ring 1</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Ring to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/rope-chain.jpg" alt="Accessory 24">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Silver chain</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Formal Belt to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/seiko-watch.jpg" alt="Accessory 25">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Seiko Watch</h3>
+                        <p>Color: Brown</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Seiko Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/mens-socks.jpg" alt="Accessory 26">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Men's Socks</h3>
+                        <p>Color: Silver</p>
+                        <div class="product-price">
+                            <span class="price">15,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Men's Socks to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/womens-watch.jpeg" alt="Accessory 27">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Women's Watch</h3>
+                        <p>Color: Gold</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Women's Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/unisex-watch.jpg" alt="Accessory 28">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Unisex Watch</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">600/=</span>
+                            <button class="add-to-cart" aria-label="Add Unisex Watch to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/mens-jeans.jpg" alt="Accessory 29">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Jeans</h3>
+                        <p>Color: Blue</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Jeans to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/neutral-rings.jpg" alt="Accessory 30">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Signet Ring</h3>
+                        <p>Color: Gold</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Signet Ring to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/accessories/sports-medal.jpg" alt="Accessory 31">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sports Medal</h3>
+                        <p>Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">500/=</span>
+                            <button class="add-to-cart" aria-label="Add Sports Medal to cart">
+                                <i class="fa-solid fa-shopping-cart"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Preview -->
+    <div class="cart-preview" id="cartPreview" aria-live="polite">
+        <h3>Your Cart</h3>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>Ksh0.00</span>
+        </div>
+        <div class="cart-buttons">
+            <button id="viewCartBtn" class="view-cart-btn">View Cart Details</button>
+            <button id="checkoutBtn" class="checkout-btn">Delete</button>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div id="accountModal" class="modal" style="display: none">
+        <div class="modal-content">
+            <span class="close-btn" id="closeAccountModalBtn">&times;</span>
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form id="login">
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Login</button>
+                    <p>
+                        Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                    </p>
+                </form>
+            </div>
+            <div id="userProfileModal" style="display: none">
+                <h2 id="userEmail"></h2>
+                <button id="signOutBtn" class="btn">Sign Out</button>
+            </div>
+            <div id="signupForm" style="display: none">
+                <h2>Sign Up</h2>
+                <form id="signup">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Cart Modal -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content cart-modal">
+        <span class="close-btn" id="closeCartBtn">&times;</span>
+        <h2>Shopping Cart</h2>
+        <div class="detailed-cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+          <div class="subtotal">
+            <span>Subtotal:</span>
+            <span class="subtotal-amount">Ksh0.00</span>
+          </div>
+          <div class="shipping">
+            <span>Shipping:</span>
+            <span class="shipping-amount">Ksh0.00</span>
+          </div>
+          <div class="total">
+            <span>Total:</span>
+            <span class="total-amount">Ksh0.00</span>
+          </div>
+        </div>
+        <div class="cart-actions">
+          <button id="continueShoppingBtn" class="btn">Continue Shopping</button>
+          <button id="proceedToCheckoutBtn" class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content checkout-modal">
+        <span class="close-btn" id="closeCheckoutModal">&times;</span>
+        <h2>Checkout</h2>
+        <div class="checkout-summary">
+          <h3>Order Summary</h3>
+          <div class="checkout-items">
+            <!-- Items will be populated here -->
+          </div>
+          <div class="checkout-total">
+            <p>Total: <span id="checkoutTotal">Ksh0.00</span></p>
+          </div>
+        </div>
+        <div class="payment-options">
+          <h3>Select Payment Method</h3>
+          <div class="payment-method">
+            <img src="images/paybill.jpg" alt="M-Pesa" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>M-Pesa</h4>
+              <p>Till Number: <span class="copyable" data-value="5044921">5044921</span> <button class="copy-btn" data-target="5044921">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/images (1).png" alt="Equity Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>Equity Bank</h4>
+              <p>Till Number: <span class="copyable" data-value="940116">940116</span> <button class="copy-btn" data-target="940116">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/Family-Bank-branches-codes-min.jpg" alt="Family Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>Family Bank</h4>
+              <p>BSS No: <span class="copyable" data-value="222111">222111</span> <button class="copy-btn" data-target="222111">Copy</button></p>
+              <p>Acc: <span class="copyable" data-value="9090543">9090543</span> <button class="copy-btn" data-target="9090543">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/pexels-maitree-rimthong-1602726.jpg" alt="M-Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>M-Bank</h4>
+              <p>BSS No: <span class="copyable" data-value="542542">542542</span> <button class="copy-btn" data-target="542542">Copy</button></p>
+              <p>Acc No: <span class="copyable" data-value="21470">21470</span> <button class="copy-btn" data-target="21470">Copy</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-actions">
+          <button id="confirmPaymentBtn" class="btn">Payment Complete</button>
+          <button id="whatsappOrderBtn" class="btn whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Return Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Size Guide</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Payment Methods</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+              <li>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i> Mon-Sat:
+                7:00 AM - 7:00 PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

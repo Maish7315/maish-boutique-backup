@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maish | Fashion Boutique</title>
+    <meta name="description" content="Maish Boutique: Discover the latest trends in fashion with our exclusive collections. Shop clothing, accessories, and footwear with great deals." />
+    <meta name="theme-color" id="themeColor" content="#ffffff" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Maish | Fashion Boutique" />
+    <meta property="og:description" content="Discover the latest trends in fashion with our exclusive collections. Shop clothing, accessories, and footwear with great deals." />
+    <meta property="og:image" content="images/hero.jpg" />
+    <meta property="og:site_name" content="Maish Boutique" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maish | Fashion Boutique" />
+    <meta name="twitter:description" content="Discover the latest trends in fashion with our exclusive collections. Shop clothing, accessories, and footwear with great deals." />
+    <meta name="twitter:image" content="images/hero.jpg" />
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="#" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img" />
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-controls="navLinks" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#kids-wear">Kids </a></li>
+                        <li><a href="#work-wear">Work </a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#sports-equipments">Sports</a></li>
+                        <li><a href="#bags-suitcases">Bags</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#mattress-center">Mattresses</a></li>
+                        <li><a href="#uniform-center">Uniform</a></li>
+                        <li><a href="#hotel-supplies">Hotel</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart" aria-hidden="true"></i>
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Delivery Banner Below Header -->
+    <div class="delivery-banner top-banner">
+        <div class="delivery-content">
+            <div class="delivery-car">🚗</div>
+            <div class="delivery-text">Free Delivery for orders from <strong>25,000ksh</strong> and above. We offer country-wide delivery!</div>
+        </div>
+    </div>
+
+    <!-- Cart Preview -->
+    <div class="cart-preview" id="cartPreview" aria-live="polite">
+        <h3>Your Cart</h3>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>Ksh0.00</span>
+        </div>
+        <div class="cart-buttons">
+            <button id="viewCartBtn" class="view-cart-btn">View Cart Details</button>
+            <button id="checkoutBtn" class="checkout-btn">Delete</button>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div id="accountModal" class="modal" style="display: none">
+        <div class="modal-content">
+            <span class="close-btn" id="closeAccountModalBtn">&times;</span>
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form id="login">
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Login</button>
+                    <p>
+                        Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                    </p>
+                </form>
+            </div>
+            <div id="userProfileModal" style="display: none">
+                <h2 id="userEmail"></h2>
+                <button id="signOutBtn" class="btn">Sign Out</button>
+            </div>
+            <div id="signupForm" style="display: none">
+                <h2>Sign Up</h2>
+                <form id="signup">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal">
+            <span class="close-btn" id="closeCartBtn">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div class="detailed-cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span class="subtotal-amount">Ksh0.00</span>
+                </div>
+                <div class="shipping">
+                    <span>Shipping:</span>
+                    <span class="shipping-amount">Ksh0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span class="total-amount">Ksh0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button id="continueShoppingBtn" class="btn">Continue Shopping</button>
+                <button id="proceedToCheckoutBtn" class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal">
+            <span class="close-btn" id="closeCheckoutModal">&times;</span>
+            <h2>Checkout</h2>
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div class="checkout-items">
+                    <!-- Items will be populated here -->
+                </div>
+                <div class="checkout-total">
+                    <p>Total: <span id="checkoutTotal">Ksh0.00</span></p>
+                </div>
+            </div>
+            <div class="payment-options">
+                <h3>Select Payment Method</h3>
+                <div class="payment-method">
+                    <img src="images/new-mbank-logo.jpg" alt="M-Bank" style="width: 50px; height: 50px; object-fit: contain;">
+                    <div class="payment-details">
+                        <h4>M-Bank - Maish Bazaar</h4>
+                        <p>BSS No: <span class="copyable" data-value="542542">542542</span> <button class="copy-btn" data-target="542542">Copy</button></p>
+                        <p>Acc No: <span class="copyable" data-value="21470">21470</span> <button class="copy-btn" data-target="21470">Copy</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-row">
+                <button id="confirmPaymentBtn" class="payment">PAYMENT COMPLETE</button>
+                <button id="whatsappOrderBtn" class="whatsapp">ORDER VIA WHATSAPP</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-label="Summer Collection 2025">
+            <div class="carousel-container">
+                <div class="slide" style="background-image: url('images/hero.jpg')"></div>
+                <div class="slide" style="background-image: url('images/roy.jpg')"></div>
+                <div class="slide" style="background-image: url('images/men.jpg')"></div>
+                <div class="slide" style="background-image: url('images/LABERDE%20on%20Instagram_%20%E2%80%9CClassic%20Casual%20Suit%20%F0%9F%91%91%E2%80%A6.jpg')"></div>
+                <div class="slide" style="background-image: url('images/maish%20boutique.png')"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Summer Collection 2025</h1>
+                <p>
+                    Discover the latest trends in fashion with our exclusive summer collection. Up to 30% off on selected items!
+                </p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    <a href="virtual-try-on.html" class="btn" style="background: linear-gradient(90deg, var(--primary), var(--accent));">
+                        <i class="fa-solid fa-magic" style="margin-right: 8px;"></i>Try Maish Virtual Mirror
+                    </a>
+                    <a href="tel:+254799921036" class="btn">Call Maish</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="countdown-section emergency-offer" id="countdownSection" style="display: none">
+            <div class="container">
+                <h2 class="countdown-title emergency-title">🚨 MAISH WEEKEND EXCLUSIVE OFFERS! 🚨</h2>
+                <p class="emergency-text">⚡ FLASH SALE - DON'T MISS OUT! ⚡</p>
+                <p>Exclusive weekend deals ending in:</p>
+                <div id="countdownTimer" class="countdown-timer"></div>
+                <button id="viewOffersBtn" class="btn emergency-btn">GRAB DEALS NOW!</button>
+            </div>
+        </section>
+
+        <!-- Offer Modal -->
+        <div id="offerModal" class="modal" style="display: none">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModalBtn">&times;</span>
+                <h2>This Weekend's Offers</h2>
+                <div class="offer-items">
+                    <!-- Offer items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Categories -->
+            <h2 id="categories" class="section-title">Shop by Category</h2>
+            <div class="categories">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/women.jpg" alt="Women's clothing category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Women's Clothing</h3>
+                        <a href="women.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/mens suite.jpeg" alt="Men's fashion category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Men's Fashion</h3>
+                        <a href="men.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/chains.jpg" alt="Accessories category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Accessories</h3>
+                        <a href="accessories.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/footwear.jpg" alt="Footwear category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Designer Handbag</h3>
+                        <a href="handbags.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="mattress-center" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/The%20Stearns%20%26%20Foster%20Lux%20Estate%20Collection%E2%80%A6.jpg" alt="Mattress Center" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Maish Mattress Center</h3>
+                        <a href="mattress.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="uniform-center" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/uniform.jpg" alt="Maish Uniform Center" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Maish Uniform Center</h3>
+                        <a href="uniforms.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="kids-wear" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/kids%20wear/boys-suit.jpeg" alt="Kids Wear category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Kids Wear</h3>
+                        <a href="kids.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="work-wear" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/work%20wear/Wearpack%20Baju%20Safety%20Mokoworkwear.jpeg" alt="Work Wear category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Work Wear</h3>
+                        <a href="workwear.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="bags-suitcases" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/This%20Backpack%20Has%20A%20Secret%20Feature%20%E2%80%94%20And%20It%E2%80%99s%20The%20TSA%20Hack%20You%20Never%20Knew%20You%20Needed.jpeg" alt="Bags and Suitcases category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Bags and Suitcases</h3>
+                        <a href="bags.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="sports-equipments" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/manchester.jpg" alt="Sports Equipments category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Sports Equipments</h3>
+                        <a href="sports.html" class="btn" target="_self">Explore</a>
+                    </div>
+                </div>
+                <div id="hotel-supplies" class="category-card">
+                    <div class="category-img">
+                        <img loading="lazy" src="images/bathrobe.jpeg" alt="Hotel Supplies category" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Hotel Supplies</h3>
+                        <button onclick="window.location.href='hotel.html'" class="btn">Explore</button>
+                    </div>
+                </div>
+                <div id="virtual-mirror" class="category-card">
+                    <div class="category-img" style="background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-magic" style="font-size: 60px; color: white;"></i>
+                    </div>
+                    <div class="category-content">
+                        <h2>New Maish Feature</h2>
+                        <h3>Virtual Try-On Maish Mirror</h3>
+                        <h3>Try our outfits before you buy</h3>
+                        <a href="virtual-try-on.html" class="btn">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Products -->
+            <h2 id="products" class="section-title">Featured Products</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/Women%27s%20Vacation%20Romantic%20Elegant%20Ditsy%20Floral%E2%80%A6.jpg" alt="Summer Floral Dress product image" />
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Summer Floral Dress</h3>
+                        <p>Lightweight and comfortable for summer days</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">6,000/=</span>
+                                <span class="price">4,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Summer Floral Dress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/PRICES%20MAY%20VARY_%20%E3%80%90Western%20Style%20Denim%20Jacket%E2%80%A6.jpg" alt="Denim Jacket product image" />
+                        <span class="product-badge">On sale</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Denim Jacket</h3>
+                        <p>Classic denim jacket for all occasions</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">5,000/=</span>
+                                <span class="price">3,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Denim Jacket to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/handbag.jpg" alt="Jeans Stylish product image" />
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Jeans Stylish</h3>
+                        <p>Stylish jeans for a casual look</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">2,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Jeans Stylish to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/0d7e3ac8-1c29-4fa9-a2c4-5ca2ed528d45.jpeg" alt="Official suits product image" />
+                        <span class="product-badge">On sale</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Official suits</h3>
+                        <p>Classic official suits for all occasions</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">20,000/=</span>
+                                <span class="price">15,000/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Official suits to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/2dd7e4ad-73dd-47b2-b851-888d23f34573.jpeg" alt="Nike Shoes product image" />
+                        <span class="product-badge">On sale</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Nike Shoes</h3>
+                        <p>Classic Nike shoes for all occasions</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">7,000/=</span>
+                                <span class="price">5,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Nike Shoes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/hoodie-banner.jpeg" alt="Hoodie product image" />
+                        <span class="product-badge">On sale</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Hoodie</h3>
+                        <p>Classic hoodie for all occasions</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">5,000/=</span>
+                                <span class="price">3,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Denim Jacket to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/suite.jpeg" alt="Classic men's suits outfit crafted to impress image" />
+                        <span class="product-badge">On sale</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Classic men's suits outfit crafted to impress</h3>
+                        <p>Classic men's suits for all occasions</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">25,000/=</span>
+                                <span class="price">15,500/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Classic men's suits outfit crafted to impress to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/shoes.jpg" alt="Running Shoes product image" />
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sport Shoes</h3>
+                        <p>Lightweight running shoes with cushioning</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="old-price">5,000/=</span>
+                                <span class="price">4,000/=</span>
+                            </div>
+                            <button class="add-to-cart" aria-label="Add Running Shoes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Subscribe to Maish Newsletter</h2>
+                <p>Get the latest updates on new products and upcoming sales</p>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <input type="email" name="email" placeholder="Enter your email address" required autocomplete="email" aria-label="Email address" />
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="subscribeStatus" aria-live="polite"></p>
+                <div class="comment-section">
+                    <div class="comment">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="comment-text">
+                            "I love the quality and class Maish Boutique goods. Longer services and are Unique"
+                        </p>
+                        <p class="comment-author">- Danny Duncan</p>
+                    </div>
+                    <div class="comment">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="comment-text">
+                            "The only fashion house,sports house and top in supply and delivery of High quality Bedding goods and work wears. If you want any top and trendy garments don't hesitate to visit Maish Boutique."
+                        </p>
+                        <p class="comment-author">- Akaye Victor</p>
+                    </div>
+                    <div class="comment">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="comment-text">
+                            "My number one boutique shop, siwezi kuenda mahali kwingine kama nataka vitu za bei Nafuu na cha kudumu! Tembelea Maish Boutique leo. Big up Maish..number one stop shop!"
+                        </p>
+                        <p class="comment-author">- Simon Njoroge</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Delivery Banner Above Footer -->
+    <div class="delivery-banner bottom-banner">
+        <div class="delivery-content">
+            <div class="delivery-car">🚗</div>
+            <div class="delivery-text">FREE DELIVERY for orders from 25,000 and above. Country wide delivery!</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maish Boutique</h3>
+                    <p>
+                        Your one-stop destination for trendy clothing and accessories. We offer high-quality products at affordable prices.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maishboutique" aria-label="Facebook" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/maishboutique" aria-label="Instagram" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@maish_boutique1" aria-label="TikTok" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.threads.net/@samuelmwangi" aria-label="Threads" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-threads" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/+254799921036" aria-label="WhatsApp" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Shop</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#" id="shippingPolicy"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Shipping Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" id="returnPolicy"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Return Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" id="sizeGuide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Size Guide</a>
+                        </li>
+                        <li>
+                            <a href="#" id="paymentMethods"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Payment Methods</a>
+                        </li>
+                        <li>
+                            <a href="#" id="trackOrder"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Track Order</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                            Nairobi Bomet Highway, Narok
+                        </li>
+                        <li>
+                            <a href="tel:+254799921036" class="phone-link" aria-label="Call Maish Boutique">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                +254-799-921-036
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            maishboutiquemarketing@gmail.com
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i> Mon-Sat: 7:00 AM - 7:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Combined Message Button -->
+    <div class="message-button-container">
+        <button class="message-main-btn" id="messageMainBtn" aria-label="Contact options">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="message-options" id="messageOptions">
+            <a href="https://wa.me/+254799921036" class="message-option whatsapp-option" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="tel:+254799921036" class="message-option call-option" aria-label="Call us">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Show floating buttons on all pages
+        });
+
+        // Make the car animation pause on hover for better readability
+        document.querySelectorAll('.delivery-banner').forEach(banner => {
+            banner.addEventListener('mouseenter', () => {
+                banner.style.animationPlayState = 'paused';
+            });
+
+            banner.addEventListener('mouseleave', () => {
+                banner.style.animationPlayState = 'running';
+            });
+        });
+
+        // Combined message button functionality
+        const messageMainBtn = document.getElementById('messageMainBtn');
+        const messageOptions = document.getElementById('messageOptions');
+
+        if (messageMainBtn && messageOptions) {
+            messageMainBtn.addEventListener('click', () => {
+                messageOptions.classList.toggle('show');
+            });
+
+            // Close options when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!messageMainBtn.contains(e.target) && !messageOptions.contains(e.target)) {
+                    messageOptions.classList.remove('show');
+                }
+            });
+        }
+    </script>
+
+    <!-- 🔵 Tidio AI Chat Widget -->
+    <script src="//code.tidio.co/x04uexz92wzpoyflwm6eyqek30pu32ac.js" async></script>
+
+</body>
+</html>

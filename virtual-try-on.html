@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maish Virtual Try-On Mirror (Front-end)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <style>
+    :root {
+      --tryon-bg: var(--background, #ffffff);
+      --tryon-card: var(--card-bg, #f8f9fa);
+      --tryon-accent: var(--primary, #8a2be2);
+      --tryon-muted: var(--text, #333);
+      --tryon-secondary: var(--secondary, #ff6b6b);
+      --tryon-border: var(--border, #e0e0e0);
+      --tryon-shadow: var(--shadow, rgba(0, 0, 0, 0.1));
+    }
+
+    .dark-mode {
+      --tryon-bg: var(--background, #121212);
+      --tryon-card: var(--card-bg, #1e1e1e);
+      --tryon-accent: var(--primary, #bb86fc);
+      --tryon-muted: var(--text, #f5f5f5);
+      --tryon-secondary: var(--secondary, #ff79c6);
+      --tryon-border: var(--border, #333);
+      --tryon-shadow: var(--shadow, rgba(0, 0, 0, 0.4));
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: var(--tryon-muted);
+      background: var(--tryon-bg);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .app {
+      max-width: 1100px;
+      margin: 18px auto;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 18px;
+    }
+
+    @media(max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--tryon-card);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 6px 18px var(--tryon-shadow);
+      border: 1px solid var(--tryon-border);
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: var(--tryon-accent);
+    }
+
+    p.muted {
+      color: var(--tryon-muted);
+      margin: 6px 0 12px 0;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    /* Mirror area */
+    .mirror {
+      position: relative;
+      height: 640px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--tryon-border);
+    }
+
+    .mirror .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    .subject-img {
+      position: absolute;
+      inset: 0 0 0 0;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    /* garment overlays */
+    .garment {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center center;
+      touch-action: none;
+      cursor: move;
+    }
+
+    .garment img {
+      display: block;
+      max-width: 600px;
+      max-height: 600px;
+      pointer-events: none;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* sidebar */
+    .sidebar {
+      position: relative;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--tryon-accent), var(--tryon-secondary));
+      border: none;
+      color: white;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--tryon-shadow);
+    }
+
+    input[type=file] {
+      display: none;
+    }
+
+    label.upload {
+      display: inline-block;
+      background: var(--tryon-card);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--tryon-muted);
+      cursor: pointer;
+      border: 2px solid var(--tryon-border);
+      transition: border-color 0.2s ease;
+    }
+
+    label.upload:hover {
+      border-color: var(--tryon-accent);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--tryon-muted);
+      opacity: 0.7;
+    }
+
+    .list {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .garment-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--tryon-border);
+      transition: background-color 0.2s ease;
+    }
+
+    .garment-item:hover {
+      background: var(--tryon-card);
+    }
+
+    .garment-item img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    footer {
+      font-size: 12px;
+      color: var(--tryon-muted);
+      margin-top: 10px;
+      opacity: 0.7;
+    }
+
+    /* transform UI */
+    .transform-ui {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      margin-top: 8px;
+    }
+
+    .slider {
+      width: 100%;
+      accent-color: var(--tryon-accent);
+    }
+
+    /* responsive */
+    @media(max-width: 540px) {
+      .mirror {
+        height: 520px;
+      }
+    }
+
+    /* Promo banner */
+    .promo-banner {
+      background: linear-gradient(90deg, var(--tryon-accent), var(--tryon-secondary));
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* Back Button Styles */
+    .back-btn {
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px) translateX(-2px);
+      box-shadow: 0 6px 12px var(--tryon-shadow);
+    }
+
+    .back-text {
+      font-weight: 600;
+    }
+
+    /* Mobile responsive back button */
+    @media(max-width: 480px) {
+      .back-text {
+        display: none;
+      }
+
+      .back-btn {
+        padding: 8px 12px !important;
+        font-size: 14px;
+      }
+
+      .back-btn i {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Home Button -->
+  <div style="padding: 15px 18px; background: var(--tryon-card); border-bottom: 1px solid var(--tryon-border);">
+    <a href="index.html" class="btn back-btn" style="background: var(--tryon-secondary); display: inline-flex; align-items: center; gap: 8px;">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span class="back-text">Back to Maish Boutique</span>
+    </a>
+  </div>
+
+  <div class="app">
+    <div class="card">
+      <div class="promo-banner">
+        ✨ New feature! Try outfits before you buy with our <strong>Virtual Try-On Mirror</strong>. Upload a selfie and test your style instantly! ✨
+      </div>
+
+      <h1>Maish Virtual Try-On Mirror</h1>
+      <p class="muted">
+        Tip: Choose the fashion you want on the <strong>Garments</strong>, upload a selfie or use your camera. Add garments (transparent PNGs) and position them on your photo.
+      </p>
+
+      <div class="mirror" id="mirror">
+        <div class="stage" id="stage">
+          <!-- user subject (photo) -->
+          <img id="subject" class="subject-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'><rect width='100%' height='100%' fill='%23081421'/><text x='50%' y='50%' fill='%239aa4b2' font-size='22' text-anchor='middle'>Upload a selfie or use camera</text></svg>" alt="subject">
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+        <button class="btn" id="downloadBtn">Save snapshot</button>
+        <button class="btn" id="clearBtn" style="background: var(--tryon-secondary);">Clear garments</button>
+        <button class="btn" id="resetBtn" style="background: #6b7280;">Reset subject</button>
+      </div>
+
+      <footer>
+        Tip: replace the placeholder garment images with your boutique PNGs (transparent backgrounds). Drag to move, use sliders to scale/rotate.
+      </footer>
+    </div>
+
+    <aside class="card sidebar">
+      <div style="display: flex; gap: 8px; align-items: center; justify-content: space-between;">
+        <div>
+          <label class="upload" for="fileInput">📤 Upload photo</label>
+          <input id="fileInput" type="file" accept="image/*">
+        </div>
+        <div>
+          <button class="btn" id="camBtn">Use Camera</button>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top: 10px;">
+        🎨 <strong>Remove Background (Free!):</strong> Get transparent background for better try-on results.<br>
+        <small style="color: var(--tryon-secondary);">Get free API key at <a href="https://www.remove.bg/api" target="_blank" rel="noopener" style="color: var(--tryon-accent);">remove.bg/api</a> (50 images/month free)</small>
+      </p>
+      <div class="row" style="margin-top: 8px;">
+        <input id="removeBgKey" placeholder="Remove.bg API key (optional)" style="flex: 1; padding: 8px; border-radius: 8px; background: var(--tryon-card); border: 1px solid var(--tryon-border); color: var(--tryon-muted);">
+        <button id="removeBgBtn" class="btn" style="padding: 8px 10px;">Remove BG</button>
+      </div>
+
+      <hr style="margin: 12px 0; border: none; border-top: 1px solid var(--tryon-border);">
+
+      <h3 style="margin: 0 0 8px 0; color: var(--tryon-accent);">Garments</h3>
+      <div class="row">
+        <label class="upload" for="garmentInput">➕ Add garment</label>
+        <input id="garmentInput" type="file" accept="image/png,image/jpeg">
+        <button class="btn" id="addSample">Add sample</button>
+      </div>
+
+      <div style="background: var(--tryon-card); border: 2px solid var(--tryon-accent); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+        <h3 style="color: var(--tryon-accent); margin: 0 0 15px 0; text-align: center;">🎯 Step 1: Choose Your Outfit</h3>
+        <p class="small" style="margin-bottom: 15px; text-align: center; color: var(--tryon-muted);">
+          Select an outfit from our collections first, then upload your photo to try it on!
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+          <a href="men.html" class="btn" style="padding: 12px 16px; font-size: 14px; text-decoration: none; display: inline-block; background: linear-gradient(90deg, var(--tryon-accent), var(--tryon-secondary));">
+            👔 Men's Fashion
+          </a>
+          <a href="women.html" class="btn" style="padding: 12px 16px; font-size: 14px; text-decoration: none; display: inline-block; background: linear-gradient(90deg, var(--tryon-accent), var(--tryon-secondary));">
+            👗 Women's Fashion
+          </a>
+          <a href="uniforms.html" class="btn" style="padding: 12px 16px; font-size: 14px; text-decoration: none; display: inline-block; background: linear-gradient(90deg, var(--tryon-accent), var(--tryon-secondary));">
+            👨‍⚖️ Uniforms
+          </a>
+        </div>
+        <p class="small" style="margin-top: 15px; text-align: center; color: var(--tryon-secondary); font-weight: 600;">
+          💡 <strong>Tip:</strong> Choose your outfit first, then come back here to upload your photo!
+        </p>
+      </div>
+
+      <div style="background: var(--tryon-card); border: 2px solid var(--tryon-secondary); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+        <h3 style="color: var(--tryon-secondary); margin: 0 0 15px 0; text-align: center;">📸 Step 2: Upload Your Photo</h3>
+        <p class="small" style="margin-bottom: 15px; text-align: center; color: var(--tryon-muted);">
+          Upload a clear photo of yourself to try on your selected outfit!
+        </p>
+        <div style="text-align: center;">
+          <label class="upload" for="fileInput" style="display: inline-block; padding: 15px 25px; font-size: 16px; background: var(--tryon-secondary); color: white; border-radius: 8px; cursor: pointer; border: 2px solid var(--tryon-secondary);">
+            📤 Upload Your Photo
+          </label>
+          <input id="fileInput" type="file" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <div class="list" id="garmentList"></div>
+
+      <div class="transform-ui" id="transformUI" style="display: none;">
+        <label class="small">Selected garment controls</label>
+        <div class="row">
+          <label class="small">Scale</label>
+          <input id="scaleRange" type="range" min="0.2" max="3" step="0.01" value="1" class="slider">
+        </div>
+        <div class="row">
+          <label class="small">Rotate</label>
+          <input id="rotateRange" type="range" min="-180" max="180" step="1" value="0" class="slider">
+        </div>
+        <div class="row">
+          <label class="small">Opacity</label>
+          <input id="opacityRange" type="range" min="0" max="1" step="0.01" value="1" class="slider">
+        </div>
+        <div class="row" style="justify-content: space-between;">
+          <button id="bringForward" class="btn" style="background: #0ea5a3; padding: 8px 10px;">Bring forward</button>
+          <button id="sendBackward" class="btn" style="background: #f97316; padding: 8px 10px;">Send back</button>
+          <button id="removeGarment" class="btn" style="background: #ef4444; padding: 8px 10px;">Remove</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const garmentInput = document.getElementById('garmentInput');
+    const stage = document.getElementById('stage');
+    const subject = document.getElementById('subject');
+    const garmentList = document.getElementById('garmentList');
+    const transformUI = document.getElementById('transformUI');
+    const scaleRange = document.getElementById('scaleRange');
+    const rotateRange = document.getElementById('rotateRange');
+    const opacityRange = document.getElementById('opacityRange');
+    const removeGarmentBtn = document.getElementById('removeGarment');
+    const bringForwardBtn = document.getElementById('bringForward');
+    const sendBackwardBtn = document.getElementById('sendBackward');
+    const clearBtn = document.getElementById('clearBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const addSampleBtn = document.getElementById('addSample');
+
+    let selectedGarment = null;
+
+    fileInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        subject.src = ev.target.result;
+
+        // Check if there's a selected item for try-on
+        const selectedItem = localStorage.getItem('selectedForTryOn');
+        if (selectedItem) {
+          const product = JSON.parse(selectedItem);
+          setTimeout(() => {
+            addGarment(product.image);
+            alert(`✨ ${product.title} has been applied to your photo!\n\nYou can now adjust the position, size, and opacity of the outfit.`);
+            localStorage.removeItem('selectedForTryOn'); // Clear after use
+          }, 500);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    garmentInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => { addGarment(ev.target.result); };
+      reader.readAsDataURL(file);
+    });
+
+    // Sample garments - REPLACE THESE WITH YOUR BOUTIQUE PNGS (transparent backgrounds)
+    // To add your own garments:
+    // 1. Create PNG images with transparent backgrounds of your clothing items
+    // 2. Save them in the 'images/' folder
+    // 3. Replace the URLs below with your PNG file paths
+    // 4. Or use the "Add garment" button to upload them directly
+    const sampleGarments = [
+      'images/MAISH_LOGO-1-removebg-preview.png', // Your existing transparent logo
+      // Add your boutique garment PNGs here:
+      // 'images/garments/t-shirt-transparent.png',
+      // 'images/garments/dress-transparent.png',
+      // 'images/garments/jacket-transparent.png',
+      // 'images/garments/hoodie-transparent.png',
+      // Example placeholders (replace with your actual PNGs):
+      'https://via.placeholder.com/300x400/ff6b6b/ffffff?text=Your+T-Shirt+PNG',
+      'https://via.placeholder.com/300x400/8a2be2/ffffff?text=Your+Dress+PNG',
+      'https://via.placeholder.com/300x400/bb86fc/ffffff?text=Your+Jacket+PNG'
+    ];
+
+    let currentSampleIndex = 0;
+
+    addSampleBtn.addEventListener('click', () => {
+      // Cycle through sample garments
+      const garmentUrl = sampleGarments[currentSampleIndex];
+      addGarment(garmentUrl);
+      currentSampleIndex = (currentSampleIndex + 1) % sampleGarments.length;
+    });
+
+    // Function to easily add garments from URLs
+    function addGarmentFromURL(url) {
+      addGarment(url);
+    }
+
+    function addGarment(src){
+      const div = document.createElement('div');
+      div.className = 'garment';
+      div.style.transform = 'translate(-50%, -50%) scale(1) rotate(0deg)';
+      const img = document.createElement('img');
+      img.src = src;
+      div.appendChild(img);
+      stage.appendChild(div);
+      makeDraggable(div);
+
+      const item = document.createElement('div');
+      item.className = 'garment-item';
+      const thumb = document.createElement('img');
+      thumb.src = src;
+      item.addEventListener('click', () => selectGarment(div));
+      garmentList.appendChild(item);
+
+      selectGarment(div);
+    }
+
+    function selectGarment(el){
+      selectedGarment = el;
+      transformUI.style.display = 'block';
+      const t = el.style.transform;
+      const scale = parseFloat(t.match(/scale\(([^)]+)\)/)?.[1]||1);
+      const rotate = parseFloat(t.match(/rotate\(([^)]+)deg\)/)?.[1]||0);
+      scaleRange.value = scale;
+      rotateRange.value = rotate;
+      opacityRange.value = el.style.opacity || 1;
+    }
+
+    scaleRange.addEventListener('input', () => {
+      if(!selectedGarment) return;
+      applyTransform();
+    });
+
+    rotateRange.addEventListener('input', () => {
+      if(!selectedGarment) return;
+      applyTransform();
+    });
+
+    opacityRange.addEventListener('input', () => {
+      if(!selectedGarment) return;
+      selectedGarment.style.opacity = opacityRange.value;
+    });
+
+    function applyTransform(){
+      const scale = scaleRange.value;
+      const rotate = rotateRange.value;
+      selectedGarment.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${rotate}deg)`;
+    }
+
+    removeGarmentBtn.addEventListener('click', () => {
+      if(!selectedGarment) return;
+      garmentList.removeChild([...garmentList.children].find(x=>x.querySelector('img').src===selectedGarment.querySelector('img').src));
+      stage.removeChild(selectedGarment);
+      selectedGarment=null;
+      transformUI.style.display='none';
+    });
+
+    bringForwardBtn.addEventListener('click', () => {
+      if(selectedGarment){
+        stage.appendChild(selectedGarment);
+      }
+    });
+
+    sendBackwardBtn.addEventListener('click', () => {
+      if(selectedGarment){
+        stage.insertBefore(selectedGarment, stage.firstChild);
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      document.querySelectorAll('.garment').forEach(g=>g.remove());
+      garmentList.innerHTML = '';
+      transformUI.style.display='none';
+    });
+
+    resetBtn.addEventListener('click', () => {
+      subject.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='1200'><rect width='100%' height='100%' fill='%23081421'/><text x='50%' y='50%' fill='%239aa4b2' font-size='22' text-anchor='middle'>Upload a selfie or use camera</text></svg>";
+    });
+
+    function makeDraggable(el){
+      let isDown=false, startX, startY, origX=0, origY=0;
+      el.addEventListener('mousedown',e=>{isDown=true;startX=e.clientX;startY=e.clientY;const m=el.style.transform.match(/translate\((-?\d+\.?\d*)px, (-?\d+\.?\d*)px\)/);if(m){origX=parseFloat(m[1]);origY=parseFloat(m[2]);}});
+      window.addEventListener('mousemove',e=>{if(!isDown) return;const dx=e.clientX-startX;const dy=e.clientY-startY;el.style.left=`calc(50% + ${dx}px)`;el.style.top=`calc(50% + ${dy}px)`;});
+      window.addEventListener('mouseup',()=>isDown=false);
+    }
+
+    downloadBtn.addEventListener('click', () => {
+      html2canvas(stage).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'tryon.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    });
+
+    // Remove Background functionality using Remove.bg API (Free tier available)
+    const removeBgBtn = document.getElementById('removeBgBtn');
+    const removeBgKey = document.getElementById('removeBgKey');
+
+    removeBgBtn.addEventListener('click', async () => {
+      const apiKey = removeBgKey.value.trim();
+      const currentImage = subject.src;
+
+      if (!currentImage || currentImage.includes('data:image/svg+xml')) {
+        alert('❌ Please upload a photo first before removing background!');
+        return;
+      }
+
+      if (!apiKey) {
+        alert('❌ Please enter your Remove.bg API key!\n\nGet a free API key at: https://www.remove.bg/api\nFree tier: 50 images/month');
+        return;
+      }
+
+      // Show loading state
+      removeBgBtn.textContent = '⏳ Processing...';
+      removeBgBtn.disabled = true;
+
+      try {
+        // Create form data for Remove.bg API (using image_url parameter as per API docs)
+        const formData = new FormData();
+        formData.append('image_url', currentImage);
+        formData.append('size', 'auto');
+
+        // Call Remove.bg API
+        const removeBgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
+          method: 'POST',
+          headers: {
+            'X-Api-Key': apiKey
+          },
+          body: formData
+        });
+
+        if (!removeBgResponse.ok) {
+          const errorData = await removeBgResponse.json();
+          throw new Error(errorData.errors ? errorData.errors[0].title : 'Background removal failed');
+        }
+
+        // Get the processed image
+        const processedBlob = await removeBgResponse.blob();
+
+        // Convert to data URL and update subject image
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          subject.src = e.target.result;
+          alert('✅ Background removed successfully!\n\nYour photo now has a transparent background. You can try on outfits with better results!');
+        };
+        reader.readAsDataURL(processedBlob);
+
+      } catch (error) {
+        console.error('Remove BG Error:', error);
+        alert(`❌ Background removal failed: ${error.message}\n\nPlease check your API key and try again.`);
+      } finally {
+        // Reset button state
+        removeBgBtn.textContent = 'Remove BG';
+        removeBgBtn.disabled = false;
+      }
+    });
+
+    // Note: Selected items are now applied when user uploads their photo
+    // This allows the workflow: Select outfit → Upload photo → Apply outfit
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

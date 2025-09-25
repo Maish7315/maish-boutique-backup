@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Equipments</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> back</a>
+            <h2 class="section-title">Sports Equipments</h2>
+            <div class="products">
+                <!-- All images from images/sports%20equipment/ -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/8a412852-3924-4294-8026-1dd9d1a7ba05.jpg" alt="Referee Flags Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Referee Flags Set</h3>
+                        <p>2-piece set for soccer matches, Fair play design</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Referee Flags Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/arm-sleeves.jpeg" alt="Sports Gear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sports Gear</h3>
+                        <p>High quality equipment for various sports</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Sports Gear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/kids-football-medals.jpeg" alt="Soccer Medals Pack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Soccer Medals Pack</h3>
+                        <p>12-pack zinc alloy medals for awards</p>
+                        <div class="product-price">
+                            <span class="price">800/=</span>
+                            <button class="add-to-cart" aria-label="Add Soccer Medals Pack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/arm-sleeves.jpeg" alt="Arm Sleeves">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Arm Sleeves</h3>
+                        <p>Quick-dry, breathable with UV protection</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Arm Sleeves to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Arsenal%2025_26%20Home%20Jersey%20Size%20Medium.jpg" alt="Arsenal Home Jersey">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Arsenal Home Jersey</h3>
+                        <p>Official team jersey, Size Medium</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Arsenal Home Jersey to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/At%20Puffin%20Sports,%20we%20manufacture%20premium%20training….jpeg" alt="Training Equipment">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Training Equipment</h3>
+                        <p>Premium manufactured for optimal training</p>
+                        <div class="product-price">
+                            <span class="price">4,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Training Equipment to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Basket%20ball.jpeg" alt="Basketball">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Basketball</h3>
+                        <p>Standard size basketball for games</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Basketball to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Brand-New%20Manchester%20City%20Jersey.jpg" alt="Manchester City Jersey">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Manchester City Jersey</h3>
+                        <p>Brand new official jersey</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Manchester City Jersey to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Custom%20Bape%20style%20Nike%20Vapor%20Cleats.jpeg" alt="Custom Nike Cleats">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Custom Nike Cleats</h3>
+                        <p>Bape style vapor cleats for football</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Custom Nike Cleats to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Fasmov%20Large%20Trophy%20Cup%20for%20Custom%20Trophy%20Keepsake,%20Gold%20Award%20for%20Sports,%20Tournaments,%20Competitions,%2014_5%20inches.jpeg" alt="Large Trophy Cup">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Large Trophy Cup</h3>
+                        <p>14.5-inch gold award for tournaments</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Large Trophy Cup to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/kids-football-medals.jpeg" alt="Kids Football Medals">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kids Football Medals</h3>
+                        <p>12-pack silver medals with ribbons</p>
+                        <div class="product-price">
+                            <span class="price">1,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Kids Football Medals to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Football%20Referee%20Flag%20with%20Carry%20bag%20coin%20Soccer….jpeg" alt="Referee Flag Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Referee Flag Set</h3>
+                        <p>With carry bag and coin for soccer</p>
+                        <div class="product-price">
+                            <span class="price">1,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Referee Flag Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Fußballsocken%20Aus%20Baumwolle%20Für%20Herren%20Einheitsgröße%2039-45%20Sportstrümpfe%20W_%209%20Fa.jpeg" alt="Football Socks">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Football Socks</h3>
+                        <p>Cotton socks for men, Size 39-45</p>
+                        <div class="product-price">
+                            <span class="price">600/=</span>
+                            <button class="add-to-cart" aria-label="Add Football Socks to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Gold%20Football%20Trophy%20On%20White%20Background,%20Gold%20Football%20Trophy,%20Soccer%20Trophy,%20Football%20PNG%20Transparent%20Image%20and%20Clipart%20for%20Free%20Download.jpeg" alt="Gold Football Trophy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gold Football Trophy</h3>
+                        <p>Premium soccer trophy award</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Gold Football Trophy to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/gold-star-trophy.jpeg" alt="Gold Star Trophy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gold Star Trophy</h3>
+                        <p>Crystal tower trophy for achievements</p>
+                        <div class="product-price">
+                            <span class="price">2,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Gold Star Trophy to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/gold-vector-trophy.jpeg" alt="Gold Vector Trophy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gold Vector Trophy</h3>
+                        <p>Design trophy for sports events</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Gold Vector Trophy to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/8a412852-3924-4294-8026-1dd9d1a7ba05.jpg" alt="Referee Cards">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Referee Cards</h3>
+                        <p>Red and yellow cards for professional matches</p>
+                        <div class="product-price">
+                            <span class="price">500/=</span>
+                            <button class="add-to-cart" aria-label="Add Referee Cards to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Large%20Gold%20Trophy%20Cup%20for%20Sports%20Tournaments,%2038CM%20Metal%20Gold%20Trophies%20Party%20Favors,%20First%20Place%20Winner%20Award%20Trophies%20Cup%20for%20Soccer%20Football.jpeg" alt="Large Gold Trophy Cup">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Large Gold Trophy Cup</h3>
+                        <p>38cm metal trophy for first place</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Large Gold Trophy Cup to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Listos%20para%20apoyar%20nuestra%20selección%20en%20la%20Copa….jpeg" alt="Team Support Gear">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Team Support Gear</h3>
+                        <p>Support your selection in the cup</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Team Support Gear to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Men%20low%20ankle%20soccer%20shoes.jpeg" alt="Low Ankle Soccer Shoes">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Low Ankle Soccer Shoes</h3>
+                        <p>Comfortable for men, Low ankle design</p>
+                        <div class="product-price">
+                            <span class="price">3,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Low Ankle Soccer Shoes to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/arm-sleeves.jpeg" alt="High Ankle Soccer Boots">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">High Ankle Soccer Boots</h3>
+                        <p>Black high ankle cleats for training, Size 35</p>
+                        <div class="product-price">
+                            <span class="price">4,200/=</span>
+                            <button class="add-to-cart" aria-label="Add High Ankle Soccer Boots to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/gold-star-trophy.jpeg" alt="Gold Award Trophy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gold Award Trophy</h3>
+                        <p>35.5cm metal trophy for winners</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Gold Award Trophy to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Basket%20ball.jpeg" alt="Portable Soccer Goal">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Portable Soccer Goal</h3>
+                        <p>Two-in-one with basketball stand</p>
+                        <div class="product-price">
+                            <span class="price">5,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Portable Soccer Goal to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Arsenal%2025_26%20Home%20Jersey%20Size%20Medium.jpg" alt="Referee Uniform">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Referee Uniform</h3>
+                        <p>2025 men's soccer tracksuit</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Referee Uniform to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Brand-New%20Manchester%20City%20Jersey.jpg" alt="Men Referee Tracksuit">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Men Referee Tracksuit</h3>
+                        <p>Professional soccer jersey and shorts suit</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Men Referee Tracksuit to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Basket%20ball.jpeg" alt="Soccer Ball">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Soccer Ball</h3>
+                        <p>Standard professional soccer ball</p>
+                        <div class="product-price">
+                            <span class="price">1,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Soccer Ball to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Basket%20ball.jpeg" alt="Game Balls Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Game Balls Set</h3>
+                        <p>Multiple sports balls for games</p>
+                        <div class="product-price">
+                            <span class="price">2,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Game Balls Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/gold-vector-trophy.jpeg" alt="Sports Trophy Cup">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sports Trophy Cup</h3>
+                        <p>Custom mini prize for soccer or volleyball</p>
+                        <div class="product-price">
+                            <span class="price">1,600/=</span>
+                            <button class="add-to-cart" aria-label="Add Sports Trophy Cup to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/Basket%20ball.jpeg" alt="Ball Shop Display">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Ball Shop Display</h3>
+                        <p>Display for sports balls in shop</p>
+                        <div class="product-price">
+                            <span class="price">900/=</span>
+                            <button class="add-to-cart" aria-label="Add Ball Shop Display to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/portable-goal.jpeg" alt="Portable Soccer Goal">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Portable Soccer Goal</h3>
+                        <p>Foldable goal for training and games</p>
+                        <div class="product-price">
+                            <span class="price">7,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Portable Soccer Goal to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/sports%20equipment/referee-cards.jpeg" alt="Referee Cards">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Referee Cards</h3>
+                        <p>Official red and yellow cards set</p>
+                        <div class="product-price">
+                            <span class="price">600/=</span>
+                            <button class="add-to-cart" aria-label="Add Referee Cards to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

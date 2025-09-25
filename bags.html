@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bags and Suitcases</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="images/MAISH_LOGO-1-removebg-preview.png" alt="Maish Boutique" class="logo-img">
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav aria-label="Primary">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#products">Shop</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="index.html#products">New Arrivals</a></li>
+                        <li><a href="index.html#products">Sale</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="mattress.html">Mattress Center</a></li>
+                        <li><a href="index.html#uniform-center">Maish Uniform Center</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <button class="icon-btn" id="accountBtn" aria-label="Account">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <div id="userProfileIcon" class="user-profile" style="display: none"></div>
+                    </button>
+                    <button class="icon-btn" id="cartIcon" aria-label="Cart">
+                        <i class="fa-solid fa-shopping-cart"></i> 
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back </a>
+            <h2 class="section-title">Bags and Suitcases</h2>
+            <div class="products">
+                <!-- All images from images/bags%20and%20suitcase/ -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/4e6e4f9b-0c2d-459a-bfaf-953bb638fb1e.jpeg" alt="Designer Handbag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Designer Handbag</h3>
+                        <p>Stylish and compact, Perfect for daily use</p>
+                        <div class="product-price">
+                            <span class="price">2,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Designer Handbag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/236f1b49-dbf7-487d-aceb-b38dc68dbaef.jpeg" alt="Leather Tote">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Leather Tote</h3>
+                        <p>Spacious leather tote for work or leisure</p>
+                        <div class="product-price">
+                            <span class="price">4,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Leather Tote to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/1174ab11-f6f7-44e3-917d-445088179ca6.jpg" alt="Travel Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Travel Bag</h3>
+                        <p>Size: Medium, Color: Black</p>
+                        <div class="product-price">
+                            <span class="price">3,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Travel Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/army-backpack.jpeg" alt="Weekend Duffel">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Weekend Duffel</h3>
+                        <p>Lightweight duffel for short trips</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Weekend Duffel to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Back%20to%20school%20backpack!.jpeg" alt="School Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">School Backpack</h3>
+                        <p>Durable for daily use, Multiple compartments</p>
+                        <div class="product-price">
+                            <span class="price">2,000/=</span>
+                            <button class="add-to-cart" aria-label="Add School Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Business%20Laptop%20Rucksack.jpeg" alt="Laptop Rucksack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Business Laptop Rucksack</h3>
+                        <p>Professional design, Fits 15-inch laptop</p>
+                        <div class="product-price">
+                            <span class="price">4,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Business Laptop Rucksack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/CB%20CITY%20BAG%2017_3%20Inch%20Laptop%20Bag%20Computer%20Bag%20for%20Men%20&%20Women,%20Black%20Laptop%20Case%20Sleeve%20with%20Shoulder%20Strap%20-%20Document%20Handbag%20Briefcase%20for%20Work,%20Office,%20Travel,%20or%20Business.jpeg" alt="Laptop Briefcase">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Laptop Briefcase</h3>
+                        <p>17.3-inch laptop bag with shoulder strap</p>
+                        <div class="product-price">
+                            <span class="price">3,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Laptop Briefcase to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Convertible%20Garment%20Duffel%20Bag%20for%20Travel%20-%20Carry%20On%20Garment%20Bags%20With%20Toiletry%20Bag%20Large%20Weekender%20Bag%20for%20Men%20Women%202%20in%201%20Hanging%20Suitcase%20Suit%20Travel%20Duffel%20Overnight%20Bags%204pcs%20Set.jpeg" alt="Convertible Garment Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Convertible Garment Bag</h3>
+                        <p>2-in-1 design with toiletry bag, Ideal for travel</p>
+                        <div class="product-price">
+                            <span class="price">6,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Convertible Garment Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/e265f10a-4883-4bac-a7e8-b8346403c722.jpeg" alt="Casual Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Casual Backpack</h3>
+                        <p>Everyday carry with modern style</p>
+                        <div class="product-price">
+                            <span class="price">1,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Casual Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Experience%20guaranteed%20quality%20%20on%20your%20travel….jpeg" alt="Travel Suitcase">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Travel Suitcase</h3>
+                        <p>Guaranteed quality for long journeys</p>
+                        <div class="product-price">
+                            <span class="price">8,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Travel Suitcase to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/convertible-duffle.jpeg" alt="Fashion Tote">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fashion Tote</h3>
+                        <p>Trendy tote for fashion enthusiasts</p>
+                        <div class="product-price">
+                            <span class="price">2,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Fashion Tote to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/FR%20Fashion%20Co_%2020%20Men's%20Versatile%20Leather%20Duffel%20Bag%20-%20Brown.jpeg" alt="Leather Duffel Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Leather Duffel Bag</h3>
+                        <p>Size: Large, Color: Brown</p>
+                        <div class="product-price">
+                            <span class="price">5,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Leather Duffel Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Garment%20Duffle%20Bags%20for%20Travel,Moulyan%20Convertible%20Garment%20Bag%20with%20Shoe%20Compartment,3%20in%201%20Waterproof%20Travel%20Suit%20Bag%20with%20Shoulder%20Strap%20for%20Men%20Women.jpeg" alt="Garment Duffle Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Garment Duffle Bag</h3>
+                        <p>3-in-1 waterproof with shoe compartment</p>
+                        <div class="product-price">
+                            <span class="price">4,200/=</span>
+                            <button class="add-to-cart" aria-label="Add Garment Duffle Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Himawari%20Waterproof%20Canvas%20Backpack%20Bag%20with%20Side%20Pockets%20Dark%20Gray%20_%20One%20Size.jpeg" alt="Waterproof Canvas Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Waterproof Canvas Backpack</h3>
+                        <p>Dark Gray, Side pockets for convenience</p>
+                        <div class="product-price">
+                            <span class="price">2,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Waterproof Canvas Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/KROSER%20TSA%20Friendly%20Laptop%20Bag%2015_6%20inch%20Briefcase%20Check%20Point%20Friendly%20Laptop%20Messenger%20Bag%20Water%20Repellent%20Computer%20Case%20with%20RFID%20Pockets%20for%20College_Business_Women_Men-Charcoal%20Black.jpeg" alt="TSA Friendly Laptop Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">TSA Friendly Laptop Bag</h3>
+                        <p>Water repellent, RFID pockets, Charcoal Black</p>
+                        <div class="product-price">
+                            <span class="price">3,200/=</span>
+                            <button class="add-to-cart" aria-label="Add TSA Friendly Laptop Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/Looking%20for%20lightweight%20traveling%20bags_%20%20Here’s%20is….jpeg" alt="Lightweight Travel Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Lightweight Travel Bag</h3>
+                        <p>Easy to carry for frequent travelers</p>
+                        <div class="product-price">
+                            <span class="price">3,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Lightweight Travel Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/luggage-set.jpeg" alt="4-Piece Luggage Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">4-Piece Luggage Set</h3>
+                        <p>Premium quality, Various sizes included</p>
+                        <div class="product-price">
+                            <span class="price">15,000/=</span>
+                            <button class="add-to-cart" aria-label="Add 4-Piece Luggage Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/budget-luggage.jpeg" alt="Budget Luggage Set">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Budget Luggage Set</h3>
+                        <p>Affordable 4-piece set for family travel</p>
+                        <div class="product-price">
+                            <span class="price">9,000/=</span>
+                            <button class="add-to-cart" aria-label="Add Budget Luggage Set to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/bag%20pack.jpeg" alt="Convertible Duffle Garment Luggage">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Convertible Duffle Garment Luggage</h3>
+                        <p>Versatile travel companion</p>
+                        <div class="product-price">
+                            <span class="price">7,500/=</span>
+                            <button class="add-to-cart" aria-label="Add Convertible Duffle Garment Luggage to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/This%20Backpack%20Has%20A%20Secret%20Feature%20—%20And%20It’s%20The%20TSA%20Hack%20You%20Never%20Knew%20You%20Needed.jpeg" alt="TSA Hack Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">TSA Hack Backpack</h3>
+                        <p>Secret feature for easy airport security</p>
+                        <div class="product-price">
+                            <span class="price">3,700/=</span>
+                            <button class="add-to-cart" aria-label="Add TSA Hack Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/3-piece%20.jpeg" alt="Army Green Travel Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Army Green Travel Backpack</h3>
+                        <p>Multifunction, Vacuum compression, 19-inch</p>
+                        <div class="product-price">
+                            <span class="price">4,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Army Green Travel Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/4e6e4f9b-0c2d-459a-bfaf-953bb638fb1e.jpeg" alt="Large Capacity Backpack">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Large Capacity Backpack</h3>
+                        <p>Business multifunction with compression</p>
+                        <div class="product-price">
+                            <span class="price">4,800/=</span>
+                            <button class="add-to-cart" aria-label="Add Large Capacity Backpack to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img loading="lazy" src="images/bags%20and%20suitcase/236f1b49-dbf7-487d-aceb-b38dc68dbaef.jpeg" alt="Canvas Tote Bag">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Canvas Tote Bag</h3>
+                        <p>Large tote for women, Laptop compatible</p>
+                        <div class="product-price">
+                            <span class="price">2,900/=</span>
+                            <button class="add-to-cart" aria-label="Add Canvas Tote Bag to cart">
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Preview -->
+    <div class="cart-preview" id="cartPreview" aria-live="polite">
+        <h3>Your Cart</h3>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>Ksh0.00</span>
+        </div>
+        <div class="cart-buttons">
+            <button id="viewCartBtn" class="view-cart-btn">View Cart Details</button>
+            <button id="checkoutBtn" class="checkout-btn">Delete</button>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div id="accountModal" class="modal" style="display: none">
+        <div class="modal-content">
+            <span class="close-btn" id="closeAccountModalBtn">&times;</span>
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form id="login">
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Login</button>
+                    <p>
+                        Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                    </p>
+                </form>
+            </div>
+            <div id="userProfileModal" style="display: none">
+                <h2 id="userEmail"></h2>
+                <button id="signOutBtn" class="btn">Sign Out</button>
+            </div>
+            <div id="signupForm" style="display: none">
+                <h2>Sign Up</h2>
+                <form id="signup">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit" class="btn">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Cart Modal -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content cart-modal">
+        <span class="close-btn" id="closeCartBtn">&times;</span>
+        <h2>Shopping Cart</h2>
+        <div class="detailed-cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+          <div class="subtotal">
+            <span>Subtotal:</span>
+            <span class="subtotal-amount">Ksh0.00</span>
+          </div>
+          <div class="shipping">
+            <span>Shipping:</span>
+            <span class="shipping-amount">Ksh0.00</span>
+          </div>
+          <div class="total">
+            <span>Total:</span>
+            <span class="total-amount">Ksh0.00</span>
+          </div>
+        </div>
+        <div class="cart-actions">
+          <button id="continueShoppingBtn" class="btn">Continue Shopping</button>
+          <button id="proceedToCheckoutBtn" class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content checkout-modal">
+        <span class="close-btn" id="closeCheckoutModal">&times;</span>
+        <h2>Checkout</h2>
+        <div class="checkout-summary">
+          <h3>Order Summary</h3>
+          <div class="checkout-items">
+            <!-- Items will be populated here -->
+          </div>
+          <div class="checkout-total">
+            <p>Total: <span id="checkoutTotal">Ksh0.00</span></p>
+          </div>
+        </div>
+        <div class="payment-options">
+          <h3>Select Payment Method</h3>
+          <div class="payment-method">
+            <img src="images/paybill.jpg" alt="M-Pesa" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>M-Pesa</h4>
+              <p>Till Number: <span class="copyable" data-value="5044921">5044921</span> <button class="copy-btn" data-target="5044921">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/images (1).png" alt="Equity Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>Equity Bank</h4>
+              <p>Till Number: <span class="copyable" data-value="940116">940116</span> <button class="copy-btn" data-target="940116">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/Family-Bank-branches-codes-min.jpg" alt="Family Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>Family Bank</h4>
+              <p>BSS No: <span class="copyable" data-value="222111">222111</span> <button class="copy-btn" data-target="222111">Copy</button></p>
+              <p>Acc: <span class="copyable" data-value="9090543">9090543</span> <button class="copy-btn" data-target="9090543">Copy</button></p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <img src="images/pexels-maitree-rimthong-1602726.jpg" alt="M-Bank" style="width: 50px; height: 50px; object-fit: contain;">
+            <div class="payment-details">
+              <h4>M-Bank</h4>
+              <p>BSS No: <span class="copyable" data-value="542542">542542</span> <button class="copy-btn" data-target="542542">Copy</button></p>
+              <p>Acc No: <span class="copyable" data-value="21470">21470</span> <button class="copy-btn" data-target="21470">Copy</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-actions">
+          <button id="confirmPaymentBtn" class="btn">Payment Complete</button>
+          <button id="whatsappOrderBtn" class="btn whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Maish Boutique</h3>
+            <p>
+              Your one-stop destination for trendy clothing and accessories. We
+              offer high-quality products at affordable prices.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/maishboutique"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/maishboutique"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@maish_boutique1"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@samuelmwangi"
+                aria-label="Threads"
+                target="_blank"
+                rel="noopener"
+                ><span class="social-icon-text">Tr</span></a
+              >
+              <a
+                href="https://wa.me/+254799921036"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html#hero"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shop</a
+                >
+              </li>
+              <li>
+                <a href="index.html#categories"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Categories</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Contact</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Return Policy</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Size Guide</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Payment Methods</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Nairobi Bomet Highway, Narok
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +254-799-921-036
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                maishboutiquemarketing@gmail.com
+              </li>
+              <li>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i> Mon-Sat:
+                7:00 AM - 7:00 PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> Maish Boutique. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
